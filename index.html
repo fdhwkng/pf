@@ -3,163 +3,189 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A personal portfolio showcasing selected work, skills, and ways to get in touch.">
-  <meta name="theme-color" content="#10141d">
-  <title>Alex Morgan — Portfolio</title>
+  <meta name="description" content="Mustafayev Fuad's portfolio: technology, gaming, AI tools, and learning to code one mistake at a time.">
+  <meta name="theme-color" content="#080a08">
+  <title>Mustafayev Fuad — Destroying Digital Things</title>
   <style>
     :root {
       color-scheme: dark;
-      --bg: #10141d;
-      --panel: #171d29;
-      --panel-light: #1d2533;
-      --text: #f3f5f7;
-      --muted: #a5afc0;
-      --accent: #b8f36b;
-      --accent-dark: #91cf46;
-      --line: rgba(255,255,255,.11);
+      --bg: #080a08;
+      --surface: #0f130f;
+      --surface-2: #151b14;
+      --text: #f3f7f0;
+      --muted: #a0aa9c;
+      --accent: #a5ff4d;
+      --accent-strong: #39ff14;
+      --line: rgba(165, 255, 77, .19);
+      --line-soft: rgba(255,255,255,.10);
       --radius: 22px;
-      --max: 1120px;
+      --max: 1160px;
     }
+
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
     body {
       margin: 0;
-      background: var(--bg);
+      background:
+        radial-gradient(ellipse at 85% 0%, rgba(57,255,20,.08), transparent 28rem),
+        radial-gradient(ellipse at 0% 42%, rgba(165,255,77,.035), transparent 30rem),
+        var(--bg);
       color: var(--text);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.65;
     }
     a { color: inherit; text-decoration: none; }
-    a:focus-visible, input:focus-visible, textarea:focus-visible, button:focus-visible {
+    a:focus-visible, input:focus-visible, textarea:focus-visible, button:focus-visible, summary:focus-visible {
       outline: 3px solid var(--accent); outline-offset: 4px;
     }
-    img { display: block; width: 100%; height: auto; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    p { margin-top: 0; }
+    h1, h2, h3 { margin-top: 0; line-height: 1.08; letter-spacing: -.045em; }
+    h1 { margin-bottom: 24px; font-size: clamp(3.1rem, 8vw, 7rem); max-width: 820px; }
+    h2 { margin-bottom: 18px; font-size: clamp(2.2rem, 5vw, 4rem); }
+    h3 { margin-bottom: 12px; font-size: 1.32rem; }
+    em { font-style: normal; }
+    .accent { color: var(--accent); text-shadow: 0 0 28px rgba(165,255,77,.14); }
+    .muted { color: var(--muted); }
     .site-header {
-      position: sticky; top: 0; z-index: 10;
-      background: rgba(16,20,29,.88); backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--line);
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(8,10,8,.86); backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line-soft);
     }
     .navigation {
-      max-width: var(--max); min-height: 78px; margin: auto; padding: 0 28px;
-      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      width: min(100% - 44px, var(--max)); min-height: 78px; margin: auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 22px;
     }
-    .brand { font-weight: 850; font-size: 1.3rem; letter-spacing: -.06em; }
+    .brand { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; font-size: 1.08rem; font-weight: 900; letter-spacing: -.05em; }
     .brand strong { color: var(--accent); }
-    .nav-links { display: flex; align-items: center; gap: clamp(16px, 3vw, 34px); margin: 0; padding: 0; list-style: none; }
-    .nav-links a { color: var(--muted); font-size: .92rem; transition: color .2s ease; }
-    .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--accent); }
+    .brand em { color: #65705e; }
+    .nav-links { display: flex; align-items: center; flex-wrap: wrap; gap: clamp(13px, 2.6vw, 30px); margin: 0; padding: 0; list-style: none; }
+    .nav-links a { color: var(--muted); font-size: .91rem; transition: color .2s ease; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--accent); }
+    .nav-links .nav-cta { color: var(--bg); background: var(--accent); padding: 9px 15px; border-radius: 999px; font-weight: 800; }
+    .nav-links .nav-cta:hover { color: var(--bg); background: #c1ff83; }
     main { overflow: clip; }
-    .section { width: min(100% - 48px, var(--max)); margin-inline: auto; padding-block: 100px; }
-    .eyebrow { margin: 0 0 12px; color: var(--accent); font-size: .78rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
-    h1, h2, h3, p { margin-top: 0; }
-    h1, h2, h3 { line-height: 1.12; letter-spacing: -.045em; }
-    h1 { max-width: 760px; margin-bottom: 24px; font-size: clamp(3rem, 7.8vw, 6.7rem); }
-    h2 { margin-bottom: 18px; font-size: clamp(2.2rem, 4.5vw, 3.8rem); }
-    h3 { font-size: 1.35rem; }
-    .hero {
-      min-height: 660px; display: grid; grid-template-columns: 1.25fr .75fr;
-      align-items: center; gap: 50px; padding-top: 85px; padding-bottom: 92px;
-    }
-    .hero-copy > p:not(.eyebrow) { max-width: 600px; color: var(--muted); font-size: 1.1rem; }
-    .highlight { color: var(--accent); font-style: normal; }
-    .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
-    .button {
-      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
-      min-height: 48px; padding: 12px 20px; border: 1px solid transparent; border-radius: 999px;
-      font: inherit; font-weight: 750; cursor: pointer; transition: transform .2s ease, background .2s ease;
-    }
+    .section { width: min(100% - 44px, var(--max)); margin-inline: auto; padding-block: 108px; }
+    .hero { min-height: 680px; display: grid; grid-template-columns: minmax(0,1.18fr) minmax(300px,.82fr); align-items: center; gap: clamp(35px, 7vw, 90px); padding-top: 78px; padding-bottom: 100px; }
+    .eyebrow { margin-bottom: 15px; color: var(--accent); font-size: .76rem; font-weight: 850; letter-spacing: .17em; text-transform: uppercase; }
+    .hero-copy > p:not(.eyebrow) { max-width: 650px; color: var(--muted); font-size: clamp(1rem, 1.7vw, 1.15rem); }
+    .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 31px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 48px; padding: 12px 19px; border: 1px solid transparent; border-radius: 999px; font: inherit; font-size: .94rem; font-weight: 800; cursor: pointer; transition: transform .2s ease, background .2s ease, border-color .2s ease; }
     .button:hover { transform: translateY(-2px); }
-    .button-primary { color: #11170b; background: var(--accent); }
-    .button-primary:hover { background: var(--accent-dark); }
-    .button-secondary { border-color: var(--line); color: var(--text); background: transparent; }
-    .hero-art { position: relative; display: grid; place-items: center; min-height: 380px; }
-    .portrait-card {
-      position: relative; isolation: isolate; display: grid; place-items: center;
-      width: min(100%, 350px); aspect-ratio: 4 / 4.6; overflow: hidden;
-      border: 1px solid rgba(255,255,255,.13); border-radius: 190px 190px 32px 32px;
-      background: radial-gradient(circle at 52% 28%, #435d38 0, #293d2c 27%, #202b29 58%, #1c2230 100%);
-      box-shadow: 0 30px 100px rgba(0,0,0,.27);
+    .button-primary { color: #10150b; background: var(--accent); }
+    .button-primary:hover { background: #c1ff83; }
+    .button-secondary { border-color: var(--line-soft); color: var(--text); background: rgba(255,255,255,.015); }
+    .button-secondary:hover { border-color: var(--line); }
+    .stats { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; margin: 35px 0 0; padding: 0; }
+    .stats li { min-width: 0; list-style: none; padding: 14px 13px; border: 1px solid var(--line-soft); border-radius: 15px; background: linear-gradient(135deg, rgba(255,255,255,.035), rgba(255,255,255,.008)); }
+    .stats strong { display: block; margin-bottom: 5px; color: var(--accent); font-size: clamp(.94rem, 1.5vw, 1.12rem); line-height: 1.2; }
+    .stats small { display: block; color: var(--muted); font-size: .72rem; line-height: 1.4; }
+    .hero-art { position: relative; display: grid; place-items: center; min-width: 0; }
+    .terminal-card { width: 100%; max-width: 440px; border: 1px solid rgba(165,255,77,.3); border-radius: 23px; background: linear-gradient(145deg, #121812, #0a0d0a 75%); box-shadow: 0 0 0 8px rgba(165,255,77,.025), 0 35px 90px rgba(0,0,0,.48), 0 0 55px rgba(57,255,20,.06); overflow: hidden; transform: rotate(1.5deg); }
+    .terminal-bar { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 14px 17px; border-bottom: 1px solid var(--line-soft); background: rgba(255,255,255,.02); }
+    .terminal-bar p { margin: 0; color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .75rem; }
+    .terminal-dots { display: flex; gap: 5px; }
+    .terminal-dots i { display: block; width: 7px; height: 7px; border-radius: 50%; background: #4d5a47; }
+    .terminal-dots i:first-child { background: var(--accent-strong); box-shadow: 0 0 9px rgba(57,255,20,.6); }
+    .terminal-content { padding: 25px 22px 28px; }
+    .terminal-content pre { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; color: #b9c4b3; font: .86rem/1.9 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .terminal-content code { font: inherit; }
+    .terminal-content .prompt { color: var(--accent); }
+    .terminal-content .response { color: #f3f7f0; }
+    .terminal-content .error { color: #ff817e; }
+    .terminal-status { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--line-soft); color: var(--muted); font-size: .77rem; }
+    .status-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px rgba(165,255,77,.6); }
+    .section-heading { max-width: 760px; margin-bottom: 42px; }
+    .section-heading > p:last-child { max-width: 650px; color: var(--muted); font-size: 1.05rem; }
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 18px; }
+    .panel { padding: clamp(23px, 4vw, 36px); border: 1px solid var(--line-soft); border-radius: var(--radius); background: linear-gradient(140deg, rgba(255,255,255,.035), rgba(255,255,255,.012)); }
+    .panel-label { display: block; margin-bottom: 18px; color: var(--accent); font-size: .73rem; font-weight: 850; letter-spacing: .14em; text-transform: uppercase; }
+    .panel p:last-child { margin-bottom: 0; }
+    .about-main p, .about-side p { color: var(--muted); }
+    .about-main h3 { font-size: 1.65rem; }
+    .about-note { display: flex; align-items: flex-start; gap: 12px; margin-top: 23px; padding-top: 20px; border-top: 1px solid var(--line-soft); }
+    .about-note strong { flex: 0 0 auto; color: var(--accent); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .about-note p { margin: 0; font-size: .91rem; }
+    .interests { background: linear-gradient(180deg, transparent, rgba(165,255,77,.025), transparent); }
+    .interest-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; }
+    .interest-grid li { min-width: 0; }
+    .interest-card { height: 100%; padding: 25px; border: 1px solid var(--line-soft); border-radius: 19px; background: var(--surface); transition: border-color .2s ease, transform .2s ease; }
+    .interest-card:hover { transform: translateY(-3px); border-color: var(--line); }
+    .interest-icon { display: grid; place-items: center; width: 46px; height: 46px; margin-bottom: 20px; border: 1px solid var(--line); border-radius: 14px; color: var(--accent); background: rgba(165,255,77,.055); font-size: 1.35rem; }
+    .interest-card p { margin-bottom: 0; color: var(--muted); font-size: .94rem; }
+    .games-panel { margin-top: 18px; padding: clamp(22px, 4vw, 34px); border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(120deg, rgba(165,255,77,.07), rgba(165,255,77,.012)); }
+    .games-heading { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .games-heading h3 { margin-bottom: 17px; }
+    .games-heading p { margin: 0; color: var(--muted); font-size: .8rem; }
+    .game-list { display: flex; flex-wrap: wrap; gap: 9px; margin: 0; padding: 0; list-style: none; }
+    .game-list li { padding: 8px 12px; border: 1px solid var(--line-soft); border-radius: 999px; background: rgba(0,0,0,.2); color: #e1e9dc; font-size: .85rem; }
+    .blog-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 17px; }
+    .blog-card { min-width: 0; overflow: hidden; border: 1px solid var(--line-soft); border-radius: 20px; background: var(--surface); transition: transform .2s ease, border-color .2s ease; }
+    .blog-card:hover { transform: translateY(-4px); border-color: var(--line); }
+    .blog-card figure { position: relative; height: 190px; margin: 0; overflow: hidden; background: #121812; }
+    .blog-card figure::after { position: absolute; inset: 0; content: ""; background: linear-gradient(180deg, transparent 55%, rgba(8,10,8,.4)); pointer-events: none; }
+    .blog-card figure img { transition: transform .4s ease; }
+    .blog-card:hover figure img { transform: scale(1.04); }
+    .blog-content { padding: 23px; }
+    .blog-number { display: block; margin-bottom: 13px; color: var(--accent); font: .75rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .blog-content p { margin-bottom: 0; color: var(--muted); font-size: .93rem; }
+    .contact-section { padding-bottom: 95px; }
+    .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 22px; align-items: start; }
+    .contact-copy > p { max-width: 440px; color: var(--muted); }
+    .contact-details { display: grid; gap: 10px; margin-top: 28px; }
+    .contact-detail { padding: 16px 17px; border: 1px solid var(--line-soft); border-radius: 15px; background: rgba(255,255,255,.018); }
+    .contact-detail small { display: block; margin-bottom: 5px; color: var(--muted); font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .contact-detail strong, .contact-detail a { overflow-wrap: anywhere; font-size: .98rem; }
+    .contact-detail a:hover { color: var(--accent); }
+    address { font-style: normal; }
+    .contact-form { display: grid; gap: 16px; padding: clamp(22px, 4vw, 34px); border: 1px solid var(--line-soft); border-radius: var(--radius); background: linear-gradient(145deg, #111611, #0b0e0b); }
+    .field-row { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 13px; }
+    .field { display: grid; gap: 7px; min-width: 0; }
+    .field label { color: #dbe5d6; font-size: .86rem; font-weight: 700; }
+    .field input, .field textarea { width: 100%; min-width: 0; padding: 13px 14px; border: 1px solid rgba(255,255,255,.13); border-radius: 11px; background: #090c09; color: var(--text); font: inherit; font-size: .94rem; }
+    .field input::placeholder, .field textarea::placeholder { color: #6f7a6b; }
+    .field textarea { min-height: 145px; resize: vertical; }
+    .form-note { margin: -2px 0 0; color: var(--muted); font-size: .78rem; }
+    .form-status { min-height: 1.3em; margin: 0; color: var(--accent); font-size: .87rem; overflow-wrap: anywhere; }
+    .site-footer { border-top: 1px solid var(--line-soft); background: rgba(0,0,0,.18); }
+    .footer-inner { width: min(100% - 44px, var(--max)); margin: auto; padding-block: 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 22px; }
+    .footer-copy p { margin: 6px 0 0; color: var(--muted); font-size: .79rem; }
+    .social-links { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin: 0; padding: 0; list-style: none; }
+    .social-links a, .social-links button { display: inline-flex; align-items: center; gap: 7px; padding: 9px 12px; border: 1px solid var(--line-soft); border-radius: 999px; background: transparent; color: var(--muted); font: inherit; font-size: .8rem; cursor: pointer; transition: color .2s ease, border-color .2s ease; }
+    .social-links a:hover, .social-links button:hover { color: var(--accent); border-color: var(--line); }
+    .copyright { width: min(100% - 44px, var(--max)); margin: 0 auto; padding: 0 0 24px; color: #6f796a; font-size: .75rem; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: minmax(0,1fr) minmax(260px,.8fr); gap: 28px; }
+      .blog-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .blog-card:last-child { grid-column: span 2; display: grid; grid-template-columns: .9fr 1.1fr; }
+      .blog-card:last-child figure { height: 100%; min-height: 210px; }
     }
-    .portrait-card::before { content: ""; position: absolute; width: 240px; height: 240px; border-radius: 50%; background: var(--accent); filter: blur(1px); opacity: .88; top: 13%; }
-    .portrait-card::after { content: "AM"; position: absolute; bottom: 13%; color: #f3f5f7; font-size: clamp(5rem, 11vw, 8rem); font-weight: 900; letter-spacing: -.1em; text-shadow: 0 8px 30px rgba(0,0,0,.3); }
-    .floating-note { position: absolute; z-index: 2; right: -5px; bottom: 35px; padding: 14px 17px; border: 1px solid var(--line); border-radius: 15px; background: var(--panel); box-shadow: 0 12px 35px rgba(0,0,0,.22); }
-    .floating-note strong { display: block; font-size: 1.1rem; }
-    .floating-note small { color: var(--muted); }
-    .quick-facts { display: flex; flex-wrap: wrap; gap: 12px; margin: 42px 0 0; padding: 0; list-style: none; }
-    .quick-facts li { padding: 11px 15px; border: 1px solid var(--line); border-radius: 12px; color: var(--muted); font-size: .9rem; }
-    .quick-facts strong { color: var(--text); }
-    .section-heading { max-width: 700px; margin-bottom: 42px; }
-    .section-heading > p:last-child { max-width: 600px; margin-bottom: 0; color: var(--muted); }
-    .about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
-    .about-card, .skills-card, .contact-card { padding: clamp(24px, 4vw, 38px); border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
-    .about-card p { color: var(--muted); }
-    .about-card p:last-child { margin-bottom: 0; }
-    .profile-details { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 30px 0 0; }
-    .profile-details section { min-width: 0; }
-    .profile-details p { margin-bottom: 0; }
-    .detail-label { color: var(--muted); font-size: .83rem; }
-    .detail-value { margin-top: 4px; font-weight: 750; }
-    .skills-card h3 { margin-bottom: 22px; }
-    .skill-list { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
-    .skill-list li { padding: 9px 13px; border: 1px solid rgba(184,243,107,.25); border-radius: 999px; color: #d9f5bd; background: rgba(184,243,107,.07); font-size: .9rem; }
-    .blog-section { border-block: 1px solid var(--line); background: linear-gradient(180deg, rgba(255,255,255,.018), transparent); }
-    .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .project-card { min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); transition: transform .2s ease, border-color .2s ease; }
-    .project-card:hover { transform: translateY(-5px); border-color: rgba(184,243,107,.5); }
-    .project-card figure { margin: 0; aspect-ratio: 1.35; overflow: hidden; background: var(--panel-light); }
-    .project-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
-    .project-card:hover img { transform: scale(1.04); }
-    .project-copy { padding: 23px; }
-    .project-copy .project-type { margin-bottom: 9px; color: var(--accent); font-size: .75rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-    .project-copy h3 { margin-bottom: 10px; }
-    .project-copy p:last-child { margin-bottom: 0; color: var(--muted); font-size: .95rem; }
-    .contact-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 48px; align-items: start; }
-    .contact-intro > p:not(.eyebrow) { max-width: 420px; color: var(--muted); }
-    .contact-list { display: grid; gap: 13px; margin-top: 30px; }
-    .contact-list p { margin: 0; color: var(--muted); }
-    .contact-list strong { display: block; color: var(--text); font-size: .9rem; }
-    .contact-list a { color: var(--accent); }
-    .contact-form { display: grid; gap: 18px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    label { display: block; margin-bottom: 7px; font-size: .88rem; font-weight: 700; }
-    input, textarea {
-      width: 100%; padding: 13px 15px; border: 1px solid var(--line); border-radius: 12px;
-      color: var(--text); background: #111620; font: inherit;
-    }
-    textarea { min-height: 140px; resize: vertical; }
-    input::placeholder, textarea::placeholder { color: #727d8f; }
-    .form-note, .form-status { margin: 0; color: var(--muted); font-size: .82rem; }
-    .form-status { min-height: 1.5em; color: var(--accent); }
-    .site-footer { border-top: 1px solid var(--line); }
-    .footer-inner { max-width: var(--max); margin: auto; padding: 28px; display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; color: var(--muted); font-size: .88rem; }
-    .footer-inner p { margin: 0; }
-    .footer-inner a { color: var(--text); }
-    @media (max-width: 820px) {
+    @media (max-width: 700px) {
+      .navigation { min-height: auto; padding-block: 16px; align-items: flex-start; flex-direction: column; gap: 13px; }
+      .nav-links { width: 100%; gap: 9px 17px; }
+      .nav-links a { font-size: .85rem; }
+      .nav-links .nav-cta { padding: 7px 12px; }
       .section { padding-block: 76px; }
-      .hero { min-height: auto; grid-template-columns: 1fr .7fr; gap: 20px; padding-top: 72px; }
-      .hero-art { min-height: 300px; }
-      .portrait-card { width: min(100%, 280px); }
-      .portrait-card::before { width: 180px; height: 180px; }
-      .project-grid { grid-template-columns: repeat(2, 1fr); }
-      .project-card:last-child { grid-column: 1 / -1; }
-      .contact-layout { gap: 28px; }
+      .hero { min-height: 0; grid-template-columns: 1fr; padding-top: 70px; gap: 45px; }
+      .hero-art { width: min(100%, 500px); margin-inline: auto; }
+      .terminal-card { transform: none; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .blog-card:last-child { grid-column: auto; display: block; }
+      .blog-card:last-child figure { height: 200px; min-height: 0; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
     }
-    @media (max-width: 620px) {
-      .navigation { min-height: auto; padding: 17px 22px; align-items: flex-start; flex-direction: column; gap: 12px; }
-      .nav-links { width: 100%; justify-content: space-between; gap: 10px; }
-      .nav-links a { font-size: .84rem; }
-      .section { width: min(100% - 36px, var(--max)); padding-block: 64px; }
-      .hero { grid-template-columns: 1fr; padding-top: 62px; }
-      h1 { font-size: clamp(3rem, 15vw, 5rem); }
-      .hero-art { min-height: 280px; margin-top: 10px; }
-      .portrait-card { width: 230px; }
-      .floating-note { right: max(0px, calc(50% - 160px)); bottom: 12px; }
-      .quick-facts { margin-top: 28px; }
-      .about-layout, .contact-layout { grid-template-columns: 1fr; }
-      .project-grid { grid-template-columns: 1fr; }
-      .project-card:last-child { grid-column: auto; }
-      .form-row { grid-template-columns: 1fr; }
-      .footer-inner { padding: 24px 18px; }
+    @media (max-width: 460px) {
+      .navigation, .footer-inner, .copyright { width: min(100% - 30px, var(--max)); }
+      .section { width: min(100% - 30px, var(--max)); }
+      h1 { font-size: clamp(2.8rem, 15vw, 4.3rem); }
+      .stats { grid-template-columns: 1fr; }
+      .stats li { display: grid; grid-template-columns: .85fr 1.15fr; align-items: center; gap: 12px; }
+      .stats strong { margin: 0; }
+      .interest-grid { grid-template-columns: 1fr; }
+      .field-row { grid-template-columns: 1fr; }
+      .blog-card figure { height: 175px; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
@@ -169,169 +195,273 @@
 <body>
   <header class="site-header">
     <nav class="navigation" aria-label="Main navigation">
-      <a class="brand" href="#home" aria-label="Alex Morgan home">A<strong>M.</strong></a>
+      <a class="brand" href="#home" aria-label="Mustafayev Fuad, home"><strong>FUAD</strong><em>//</em>PORTFOLIO</a>
       <ul class="nav-links">
-        <li><a href="#home" aria-current="page">Home</a></li>
+        <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#interests">Interests</a></li>
         <li><a href="#blog">Blog</a></li>
-        <li><a href="#contacts">Contacts</a></li>
+        <li><a class="nav-cta" href="#contact">Contact ↗</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section class="section hero" id="home" aria-labelledby="home-title">
+    <section class="section hero" id="home" aria-labelledby="hero-title">
       <article class="hero-copy">
-        <p class="eyebrow">Portfolio · 2026</p>
-        <h1 id="home-title">Building digital things with <em class="highlight">purpose.</em></h1>
-        <p>Hi, I'm Alex — a designer and front-end developer who turns complex ideas into clear, useful, and memorable digital experiences.</p>
-        <nav class="hero-actions" aria-label="Explore portfolio">
-          <a class="button button-primary" href="#blog">Explore my work ↗</a>
-          <a class="button button-secondary" href="#contacts">Let's talk</a>
+        <p class="eyebrow">Mustafayev Fuad · Personal portfolio</p>
+        <h1 id="hero-title">Destroying digital things <em class="accent">with purpose.</em></h1>
+        <p>I'm Mustafayev Fuad — a student with an interest in programming and technology. Currently learning with AI, experimenting with ideas, and occasionally wondering what I just broke.</p>
+        <nav class="hero-actions" aria-label="Featured links">
+          <a class="button button-primary" href="#about">Get to know me <strong aria-hidden="true">↓</strong></a>
+          <a class="button button-secondary" href="#blog">Read the chaos ↗</a>
         </nav>
-        <ul class="quick-facts" aria-label="Portfolio highlights">
-          <li><strong>03+</strong> years learning</li>
-          <li><strong>12</strong> projects built</li>
-          <li><strong>UI/UX</strong> + development</li>
+        <ul class="stats" aria-label="Quick facts">
+          <li><strong>3 MINUTES</strong><small>Learning with Codex &amp; Claude Code</small></li>
+          <li><strong>LEVEL 0</strong><small>Not even a beginner yet 💀</small></li>
+          <li><strong>TECHNOLOGY</strong><small>Main interest</small></li>
         </ul>
       </article>
-      <aside class="hero-art" aria-label="Portfolio monogram artwork">
-        <figure class="portrait-card" role="img" aria-label="Abstract green and charcoal artwork with the initials AM"></figure>
-        <section class="floating-note" aria-label="Availability">
-          <strong>Available for work</strong>
-          <small>Open to new opportunities</small>
-        </section>
+
+      <aside class="hero-art" aria-label="A developer terminal illustration">
+        <article class="terminal-card">
+          <header class="terminal-bar">
+            <p>fuad@pc: ~/portfolio</p>
+            <p class="terminal-dots" aria-label="Terminal status"><i></i><i></i><i></i></p>
+          </header>
+          <section class="terminal-content" aria-label="Terminal text illustration">
+            <pre><code><em class="prompt">$</em> whoami
+<em class="response">Mustafayev Fuad</em>
+
+<em class="prompt">$</em> current_level
+<em class="error">Level 0. Tutorial not found.</em>
+
+<em class="prompt">$</em> learning_with
+<em class="response">Codex + Claude Code</em>
+
+<em class="prompt">$</em> current_mission
+<em class="response">Make it work. Then pray.</em></code></pre>
+            <p class="terminal-status"><i class="status-dot" aria-hidden="true"></i> System operational-ish <strong>·</strong> Confidence: loading...</p>
+          </section>
+        </article>
       </aside>
     </section>
 
     <section class="section" id="about" aria-labelledby="about-title">
       <header class="section-heading">
-        <p class="eyebrow">A little about me</p>
-        <h2 id="about-title">Curious by nature.<br>Creative by choice.</h2>
-        <p>I enjoy bringing thoughtful design and reliable code together to make the web more helpful for everyone.</p>
+        <p class="eyebrow">01 / About</p>
+        <h2 id="about-title">Curious by nature. <em class="accent">Confused by code.</em></h2>
+        <p>I'm just getting started with programming. I use AI tools like Codex and Claude Code to explore technology, experiment with ideas, and occasionally wonder why nothing works.</p>
       </header>
-      <section class="about-layout" aria-label="About and skills">
-        <article class="about-card">
-          <h3>Who I am</h3>
-          <p>I'm a digital creator focused on clean interfaces, accessible experiences, and practical solutions. I like collaborating with people, learning new tools, and improving the small details that make a product feel right.</p>
-          <p>This portfolio is a starting point. Replace the sample biography and details with your own story, achievements, and interests.</p>
-          <section class="profile-details" aria-label="Profile details">
-            <section><p class="detail-label">Based in</p><p class="detail-value">Baku, Azerbaijan</p></section>
-            <section><p class="detail-label">Focus</p><p class="detail-value">Web &amp; UI design</p></section>
-            <section><p class="detail-label">Approach</p><p class="detail-value">Curious and detail-oriented</p></section>
-            <section><p class="detail-label">Currently</p><p class="detail-value">Learning every day</p></section>
+      <section class="about-grid" aria-label="About Fuad">
+        <article class="panel about-main">
+          <small class="panel-label">Who I am</small>
+          <h3>A beginner, not a bug.</h3>
+          <p>I'm a beginner exploring programming and technology. I experiment with AI coding tools, learn by trying things out, and slowly figure out how code works.</p>
+          <aside class="about-note">
+            <strong>NOTE_01</strong>
+            <p>Any resemblance to a professional developer is currently a work in progress.</p>
+          </aside>
+        </article>
+        <article class="panel about-side">
+          <small class="panel-label">Current status</small>
+          <h3>Learning in public-ish.</h3>
+          <p>My approach is simple: stay curious, test things, break a few things, and learn something from the chaos. AI tools are part of the journey, not a magic spell. Usually.</p>
+          <p>Expect gaming references, questionable terminal messages, and zero claims of being a coding wizard.</p>
+        </article>
+      </section>
+    </section>
+
+    <section class="section interests" id="interests" aria-labelledby="interests-title">
+      <header class="section-heading">
+        <p class="eyebrow">02 / Interests</p>
+        <h2 id="interests-title">Things I'm <em class="accent">into.</em></h2>
+        <p>Not a list of professional skills. Just the things currently occupying my brain (and probably my RAM).</p>
+      </header>
+      <ul class="interest-grid">
+        <li>
+          <article class="interest-card">
+            <strong class="interest-icon" aria-hidden="true">🎮</strong>
+            <h3>Gaming</h3>
+            <p>Playing games instead of being productive. One more match. Famous last words.</p>
+          </article>
+        </li>
+        <li>
+          <article class="interest-card">
+            <strong class="interest-icon" aria-hidden="true">⚡</strong>
+            <h3>Maxing Out AI Tokens</h3>
+            <p>Because wasting tokens is not an option. The context window must feel something.</p>
+          </article>
+        </li>
+        <li>
+          <article class="interest-card">
+            <strong class="interest-icon" aria-hidden="true">🤖</strong>
+            <h3>AI Tools</h3>
+            <p>Making Codex and Claude Code do the heavy lifting while I supervise with confidence.</p>
+          </article>
+        </li>
+        <li>
+          <article class="interest-card">
+            <strong class="interest-icon" aria-hidden="true">🖥️</strong>
+            <h3>Tech &amp; Gadgets</h3>
+            <p>Exploring tech without necessarily understanding all of it. Yet.</p>
+          </article>
+        </li>
+      </ul>
+      <aside class="games-panel" aria-labelledby="games-title">
+        <header class="games-heading">
+          <h3 id="games-title">Games I keep coming back to</h3>
+          <p>My backlog is judging me.</p>
+        </header>
+        <ul class="game-list">
+          <li>Counter-Strike 2</li>
+          <li>GTA V</li>
+          <li>Minecraft</li>
+          <li>Valorant</li>
+          <li>Red Dead Redemption 2</li>
+          <li>Cyberpunk 2077</li>
+          <li>Blasphemous</li>
+          <li>Mortal Kombat 11</li>
+          <li>And many more...</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="section" id="blog" aria-labelledby="blog-title">
+      <header class="section-heading">
+        <p class="eyebrow">03 / Blog</p>
+        <h2 id="blog-title">Notes from the <em class="accent">chaos.</em></h2>
+        <p>Personal lore, gaming detours, AI experiments, and lessons learned the hard way.</p>
+      </header>
+      <section class="blog-grid" aria-label="Blog articles">
+        <article class="blog-card">
+          <figure>
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjcwMCIgdmlld0JveD0iMCAwIDEyMDAgNzAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiMxMDFhMTAiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwNzA5MDciLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JlZW4iIHgyPSIxIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI2MzZmY3MyIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzM5ZmYxNCIvPjwvbGluZWFyR3JhZGllbnQ+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0NSIgaGVpZ2h0PSI0NSIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTQ1IDBIMFY0NSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjODBkOTRlIiBzdHJva2Utb3BhY2l0eT0iLjEyIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PGZpbHRlciBpZD0iZ2xvdyI+PGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iNyIgcmVzdWx0PSJiIi8+PGZlTWVyZ2U+PGZlTWVyZ2VOb2RlIGluPSJiIi8+PGZlTWVyZ2VOb2RlIGluPSJTb3VyY2VHcmFwaGljIi8+PC9mZU1lcmdlPjwvZmlsdGVyPjwvZGVmcz48cmVjdCB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI3MDAiIGZpbGw9InVybCgjYmcpIi8+PHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iNzAwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjODNmZjRlIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1vcGFjaXR5PSIuNzUiPjxwYXRoIGQ9Ik0wIDE2MEgxODBWMjUwSDI5MFYzMzBINDA1Ii8+PHBhdGggZD0iTTEyMDAgNTIwSDEwMTBWNDQwSDkwMFYzNzBINzkwIi8+PHBhdGggZD0iTTcwIDcwMFY1NzBIMjIwVjQ5NUgzMDUiLz48cGF0aCBkPSJNMTA5MCAwVjExOEg5ODBWMTkwSDg4NSIvPjwvZz48ZyBmaWxsPSIjYTVmZjRkIj48Y2lyY2xlIGN4PSIxODAiIGN5PSIxNjAiIHI9IjciLz48Y2lyY2xlIGN4PSIyOTAiIGN5PSIzMzAiIHI9IjciLz48Y2lyY2xlIGN4PSIxMDEwIiBjeT0iNTIwIiByPSI3Ii8+PGNpcmNsZSBjeD0iOTAwIiBjeT0iMzcwIiByPSI3Ii8+PGNpcmNsZSBjeD0iMjIwIiBjeT0iNTcwIiByPSI3Ii8+PGNpcmNsZSBjeD0iOTgwIiBjeT0iMTE4IiByPSI3Ii8+PC9nPjxyZWN0IHg9IjI2MCIgeT0iMTI1IiB3aWR0aD0iNjgwIiBoZWlnaHQ9IjQ1MCIgcng9IjI0IiBmaWxsPSIjMGIxMDBiIiBzdHJva2U9IiNhNWZmNGQiIHN0cm9rZS1vcGFjaXR5PSIuNDUiIHN0cm9rZS13aWR0aD0iMiIvPjxyZWN0IHg9IjI2MCIgeT0iMTI1IiB3aWR0aD0iNjgwIiBoZWlnaHQ9IjU4IiByeD0iMjQiIGZpbGw9IiMxNTFlMTQiLz48cGF0aCBkPSJNMjYwIDE2MFYxODNIOTQwVjE2MCIgZmlsbD0iIzE1MWUxNCIvPjxjaXJjbGUgY3g9IjI5MiIgY3k9IjE1NCIgcj0iNiIgZmlsbD0iIzM5ZmYxNCIvPjxjaXJjbGUgY3g9IjMxMyIgY3k9IjE1NCIgcj0iNiIgZmlsbD0iIzUyNjU0YSIvPjxjaXJjbGUgY3g9IjMzNCIgY3k9IjE1NCIgcj0iNiIgZmlsbD0iIzUyNjU0YSIvPjx0ZXh0IHg9IjM2NSIgeT0iMTYxIiBmaWxsPSIjYTRiNjlhIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjE3Ij5UT0tFTl9CVVJOX1NJTVVMQVRPUi5leGU8L3RleHQ+PHRleHQgeD0iMzEwIiB5PSIyNDIiIGZpbGw9IiNhNWZmNGQiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iMTgiIGxldHRlci1zcGFjaW5nPSIzIj5DVVJSRU5UIFNFU1NJT048L3RleHQ+PHRleHQgeD0iMzEwIiB5PSIzNTAiIGZpbGw9InVybCgjZ3JlZW4pIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjkyIiBmb250LXdlaWdodD0iNzAwIiBmaWx0ZXI9InVybCgjZ2xvdykiPjEwMCwwMDA8L3RleHQ+PHRleHQgeD0iMzE1IiB5PSIzOTAiIGZpbGw9IiNkNGRmY2YiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iMjQiPlRPS0VOUyBTUEVOVCAoSU4gTVkgRFJFQU1TKTwvdGV4dD48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMTUgNDQ1KSI+PHJlY3Qgd2lkdGg9IjU3MCIgaGVpZ2h0PSIxNCIgcng9IjciIGZpbGw9IiMyNTMxMjMiLz48cmVjdCB3aWR0aD0iNDcwIiBoZWlnaHQ9IjE0IiByeD0iNyIgZmlsbD0idXJsKCNncmVlbikiLz48dGV4dCB4PSIwIiB5PSI0OCIgZmlsbD0iIzhkOWU4NyIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIxNyI+T1BUSU1JWkFUSU9OIExFVkVMPC90ZXh0Pjx0ZXh0IHg9IjU3MCIgeT0iNDgiIHRleHQtYW5jaG9yPSJlbmQiIGZpbGw9IiNhNWZmNGQiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iMTciPlFVRVNUSU9OQUJMRTwvdGV4dD48L2c+PHRleHQgeD0iNjAwIiB5PSI2MzgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM3NzkxNmUiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iMTUiIGxldHRlci1zcGFjaW5nPSI1Ij5MRUFSTiAvLyBCUkVBSyAvLyBSRVBFQVQ8L3RleHQ+PC9zdmc+" alt="Close-up of electronic components and a circuit board" loading="lazy" decoding="async">
+          </figure>
+          <section class="blog-content">
+            <small class="blog-number">POST_001 / AI EXPERIMENTS</small>
+            <h3>100K Tokens Later, Still a Beginner</h3>
+            <p>I thought more tokens would automatically make me a developer. Turns out, the basics still exist. Rude.</p>
           </section>
         </article>
-        <aside class="skills-card">
-          <h3>Skills &amp; interests</h3>
-          <ul class="skill-list">
-            <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Responsive design</li>
-            <li>UI/UX basics</li><li>Wireframing</li><li>Prototyping</li><li>Problem solving</li>
-          </ul>
-        </aside>
-      </section>
-    </section>
-
-    <section class="blog-section" id="blog" aria-labelledby="blog-title">
-      <section class="section">
-        <header class="section-heading">
-          <p class="eyebrow">Selected work &amp; notes</p>
-          <h2 id="blog-title">Things I've been making.</h2>
-          <p>A few sample projects and short articles. Replace these examples with your own blog posts, designs, or case studies.</p>
-        </header>
-        <section class="project-grid" aria-label="Blog posts and projects">
-          <article class="project-card">
-            <figure>
-              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNjcwIiB2aWV3Qm94PSIwIDAgOTAwIDY3MCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiMzMzQ5MzYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxNTFkMjUiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0ic2NyZWVuIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI2UwZjhiZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzhlYmY2MiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSI5MDAiIGhlaWdodD0iNjcwIiBmaWxsPSJ1cmwoI2JnKSIvPjxjaXJjbGUgY3g9IjczMCIgY3k9IjExMCIgcj0iMTcwIiBmaWxsPSIjYjhmMzZiIiBvcGFjaXR5PSIuMTIiLz48cmVjdCB4PSIxMDAiIHk9Ijk1IiB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQzMCIgcng9IjI0IiBmaWxsPSIjMTExNjIwIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIuMjQiIHN0cm9rZS13aWR0aD0iMyIvPjxwYXRoIGQ9Ik0xMDAgMTE5cTAtMjQgMjQtMjRoNjUycTI0IDAgMjQgMjR2NDJIMTAweiIgZmlsbD0iIzI3MzEzZSIvPjxjaXJjbGUgY3g9IjEzMiIgY3k9IjEzMyIgcj0iNyIgZmlsbD0iI2ZmODg3YiIvPjxjaXJjbGUgY3g9IjE1OCIgY3k9IjEzMyIgcj0iNyIgZmlsbD0iI2Y0ZDM2YiIvPjxjaXJjbGUgY3g9IjE4NCIgY3k9IjEzMyIgcj0iNyIgZmlsbD0iI2I4ZjM2YiIvPjxyZWN0IHg9IjE0MCIgeT0iMjAwIiB3aWR0aD0iMjgwIiBoZWlnaHQ9IjI3MCIgcng9IjE1IiBmaWxsPSJ1cmwoI3NjcmVlbikiLz48cmVjdCB4PSI0NjUiIHk9IjIwNyIgd2lkdGg9IjI0NSIgaGVpZ2h0PSIyMyIgcng9IjExIiBmaWxsPSIjZjNmNWY3IiBvcGFjaXR5PSIuOSIvPjxyZWN0IHg9IjQ2NSIgeT0iMjUwIiB3aWR0aD0iMjA1IiBoZWlnaHQ9IjEyIiByeD0iNiIgZmlsbD0iI2E1YWZjMCIvPjxyZWN0IHg9IjQ2NSIgeT0iMjc2IiB3aWR0aD0iMjI1IiBoZWlnaHQ9IjEyIiByeD0iNiIgZmlsbD0iI2E1YWZjMCIgb3BhY2l0eT0iLjYiLz48cmVjdCB4PSI0NjUiIHk9IjMzMCIgd2lkdGg9IjE0MiIgaGVpZ2h0PSI0NSIgcng9IjIyIiBmaWxsPSIjYjhmMzZiIi8+PHRleHQgeD0iMTY4IiB5PSIzNjAiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjQzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMTcyMDE2Ij5DbGVhcjwvdGV4dD48dGV4dCB4PSIxNjgiIHk9IjQwOCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNDMiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMxNzIwMTYiPmJ5IGRlc2lnbi48L3RleHQ+PHRleHQgeD0iMTQwIiB5PSI1ODIiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjIzIiBsZXR0ZXItc3BhY2luZz0iNiIgZmlsbD0iI2RmZThkYyI+V0VCIERFU0lHTiAvIDAxPC90ZXh0Pjwvc3ZnPg==" alt="Laptop displaying a website design on a desk" loading="lazy">
-            </figure>
-            <section class="project-copy">
-              <p class="project-type">Web design · Article</p>
-              <h3>Designing for clarity</h3>
-              <p>How a clear visual hierarchy helps people find the information they need without extra effort.</p>
-            </section>
-          </article>
-          <article class="project-card">
-            <figure>
-              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNjcwIiB2aWV3Qm94PSIwIDAgOTAwIDY3MCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiM0YTJmNjAiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyMDI0MzciLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjY3MCIgZmlsbD0idXJsKCNiZykiLz48Y2lyY2xlIGN4PSI0NTAiIGN5PSIzMjAiIHI9IjIzMCIgZmlsbD0iI2YyYThjZSIgb3BhY2l0eT0iLjEzIi8+PGcgdHJhbnNmb3JtPSJyb3RhdGUoLTggNDUwIDMyMCkiPjxyZWN0IHg9IjE2NSIgeT0iMTIwIiB3aWR0aD0iNTcwIiBoZWlnaHQ9IjM5MCIgcng9IjIwIiBmaWxsPSIjZjVmMGU4Ii8+PHJlY3QgeD0iMjAwIiB5PSIxNTQiIHdpZHRoPSI1MDAiIGhlaWdodD0iMzIyIiByeD0iOCIgZmlsbD0iIzI3MjMzNSIvPjxjaXJjbGUgY3g9IjMxNSIgY3k9IjI3MCIgcj0iODUiIGZpbGw9IiNlOWE0YzQiLz48cmVjdCB4PSI0MzAiIHk9IjE5MiIgd2lkdGg9IjIxNSIgaGVpZ2h0PSIxNyIgcng9IjgiIGZpbGw9IiNmNGVmZTkiLz48cmVjdCB4PSI0MzAiIHk9IjIyNSIgd2lkdGg9IjE1NSIgaGVpZ2h0PSIxMCIgcng9IjUiIGZpbGw9IiNhNDlhYWUiLz48cmVjdCB4PSI0MzAiIHk9IjI0NyIgd2lkdGg9IjE3OCIgaGVpZ2h0PSIxMCIgcng9IjUiIGZpbGw9IiNhNDlhYWUiIG9wYWNpdHk9Ii43Ii8+PHBhdGggZD0iTTI0MiAzODBsOTUtNzMgODggMTAyIDc3LTYzIDgzIDY4SDI0MnoiIGZpbGw9IiNiOGYzNmIiLz48cmVjdCB4PSI0MzAiIHk9IjMwNiIgd2lkdGg9IjIyNSIgaGVpZ2h0PSIxMiIgcng9IjYiIGZpbGw9IiNhNDlhYWUiLz48L2c+PGNpcmNsZSBjeD0iNzIwIiBjeT0iMTEwIiByPSI1MCIgZmlsbD0iI2I4ZjM2YiIvPjxjaXJjbGUgY3g9Ijc2MCIgY3k9IjE1MCIgcj0iMjAiIGZpbGw9IiNmN2Q0N2QiLz48dGV4dCB4PSI5MCIgeT0iNTg1IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMyIgbGV0dGVyLXNwYWNpbmc9IjYiIGZpbGw9IiNmM2Y1ZjciPlZJU1VBTCBTWVNURU0gLyAwMjwvdGV4dD48L3N2Zz4=" alt="Colorful graphic design work laid out on a desk" loading="lazy">
-            </figure>
-            <section class="project-copy">
-              <p class="project-type">Visual identity · Case study</p>
-              <h3>A simple visual system</h3>
-              <p>Exploring color, type, and reusable elements to create a consistent look across a digital product.</p>
-            </section>
-          </article>
-          <article class="project-card">
-            <figure>
-              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNjcwIiB2aWV3Qm94PSIwIDAgOTAwIDY3MCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiMyNzNhNGQiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxMTE2MjAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjY3MCIgZmlsbD0idXJsKCNiZykiLz48Y2lyY2xlIGN4PSI3NTUiIGN5PSI5MCIgcj0iMTgwIiBmaWxsPSIjNjliZmMxIiBvcGFjaXR5PSIuMTIiLz48cmVjdCB4PSIxMDAiIHk9IjEwMCIgd2lkdGg9IjcwMCIgaGVpZ2h0PSI0MjAiIHJ4PSIyMiIgZmlsbD0iIzEwMTQxZCIgc3Ryb2tlPSIjYTVhZmMwIiBzdHJva2Utb3BhY2l0eT0iLjQ1IiBzdHJva2Utd2lkdGg9IjMiLz48cGF0aCBkPSJNMTAwIDEyMnEwLTIyIDIyLTIyaDY1NnEyMiAwIDIyIDIydjU0SDEwMHoiIGZpbGw9IiMyNTJlM2MiLz48Y2lyY2xlIGN4PSIxMzUiIGN5PSIxMzciIHI9IjciIGZpbGw9IiNmZjg4N2IiLz48Y2lyY2xlIGN4PSIxNTkiIGN5PSIxMzciIHI9IjciIGZpbGw9IiNmNGQzNmIiLz48Y2lyY2xlIGN4PSIxODMiIGN5PSIxMzciIHI9IjciIGZpbGw9IiNiOGYzNmIiLz48dGV4dCB4PSIxNDAiIHk9IjIzNSIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIyNyIgZmlsbD0iI2E1YWZjMCI+MDE8L3RleHQ+PHRleHQgeD0iMTk4IiB5PSIyMzUiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iMjciIGZpbGw9IiNiOGYzNmIiPmNvbnN0PC90ZXh0Pjx0ZXh0IHg9IjMwMiIgeT0iMjM1IiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjI3IiBmaWxsPSIjZjNmNWY3Ij4gYnVpbGRQb3J0Zm9saW8gPSAoKSA9Jmd0OyB7PC90ZXh0Pjx0ZXh0IHg9IjE4MCIgeT0iMjkwIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjI1IiBmaWxsPSIjYTVhZmMwIj4wMjwvdGV4dD48dGV4dCB4PSIyMzUiIHk9IjI5MCIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIyNSIgZmlsbD0iIzY5YmZjMSI+cmV0dXJuPC90ZXh0Pjx0ZXh0IHg9IjMyMCIgeT0iMjkwIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjI1IiBmaWxsPSIjZjNmNWY3Ij4gImNsZWFuICsgdXNlZnVsIjs8L3RleHQ+PHRleHQgeD0iMTgwIiB5PSIzNDUiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iMjUiIGZpbGw9IiNhNWFmYzAiPjAzPC90ZXh0Pjx0ZXh0IHg9IjIzNSIgeT0iMzQ1IiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjI1IiBmaWxsPSIjZjNmNWY3Ij59OzwvdGV4dD48cmVjdCB4PSIxNDUiIHk9IjQwNSIgd2lkdGg9IjYxMCIgaGVpZ2h0PSIyIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIuMTIiLz48cmVjdCB4PSIxNDUiIHk9IjQzMiIgd2lkdGg9IjM1MCIgaGVpZ2h0PSIxMiIgcng9IjYiIGZpbGw9IiM2OWJmYzEiIG9wYWNpdHk9Ii44NSIvPjxyZWN0IHg9IjE0NSIgeT0iNDU3IiB3aWR0aD0iNDkwIiBoZWlnaHQ9IjEyIiByeD0iNiIgZmlsbD0iI2E1YWZjMCIgb3BhY2l0eT0iLjQ1Ii8+PHRleHQgeD0iMTAwIiB5PSI1ODUiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjIzIiBsZXR0ZXItc3BhY2luZz0iNiIgZmlsbD0iI2RjZTZmMiI+RlJPTlQtRU5EIC8gMDM8L3RleHQ+PC9zdmc+" alt="Laptop with code editor open in a workspace" loading="lazy">
-            </figure>
-            <section class="project-copy">
-              <p class="project-type">Development · Notes</p>
-              <h3>Small steps to better code</h3>
-              <p>A few habits that make front-end projects easier to read, maintain, and improve over time.</p>
-            </section>
-          </article>
-        </section>
-      </section>
-    </section>
-
-    <section class="section" id="contacts" aria-labelledby="contacts-title">
-      <section class="contact-layout">
-        <header class="contact-intro">
-          <p class="eyebrow">Get in touch</p>
-          <h2 id="contacts-title">Have an idea?<br>Let's talk.</h2>
-          <p>Have a question, a project, or just want to say hello? Send a message using the form.</p>
-          <section class="contact-list" aria-label="Contact details">
-            <p><strong>Email</strong><a href="mailto:hello@example.com">hello@example.com</a></p>
-            <p><strong>Location</strong>Baku, Azerbaijan</p>
-            <p><strong>Response time</strong>Usually within 1–2 business days</p>
+        <article class="blog-card">
+          <figure>
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjcwMCIgdmlld0JveD0iMCAwIDEyMDAgNzAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiMxNTFiMTQiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwNzA5MDciLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0ibmVvbiIgeDI9IjEiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjZDBmZjliIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMzlmZjE0Ii8+PC9saW5lYXJHcmFkaWVudD48ZmlsdGVyIGlkPSJnbG93Ij48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSI5IiByZXN1bHQ9ImIiLz48ZmVNZXJnZT48ZmVNZXJnZU5vZGUgaW49ImIiLz48ZmVNZXJnZU5vZGUgaW49IlNvdXJjZUdyYXBoaWMiLz48L2ZlTWVyZ2U+PC9maWx0ZXI+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjcwMCIgZmlsbD0idXJsKCNiZykiLz48ZyBvcGFjaXR5PSIuNCIgc3Ryb2tlPSIjNmFjYjQyIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiPjxwYXRoIGQ9Ik0wIDk1SDEyMEwxNjUgMTQwSDMyMCIvPjxwYXRoIGQ9Ik0xMjAwIDEyNUgxMDUwTDEwMTAgMTY1SDkwMCIvPjxwYXRoIGQ9Ik0wIDYwMEgxNjBMMjE1IDU0NUgzMDAiLz48cGF0aCBkPSJNMTIwMCA1OTBIMTAyMEw5NzAgNTQwSDg1MCIvPjwvZz48ZyBmaWxsPSIjYTVmZjRkIiBvcGFjaXR5PSIuNDUiPjxyZWN0IHg9IjExMiIgeT0iMjEwIiB3aWR0aD0iMTgiIGhlaWdodD0iMTgiLz48cmVjdCB4PSIxNDUiIHk9IjIxMCIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE4Ii8+PHJlY3QgeD0iMTc4IiB5PSIyMTAiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIvPjxyZWN0IHg9Ijk1MCIgeT0iNDU1IiB3aWR0aD0iMTgiIGhlaWdodD0iMTgiLz48cmVjdCB4PSI5ODMiIHk9IjQ1NSIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE4Ii8+PHJlY3QgeD0iMTAxNiIgeT0iNDU1IiB3aWR0aD0iMTgiIGhlaWdodD0iMTgiLz48L2c+PGVsbGlwc2UgY3g9IjYwMCIgY3k9IjUxNSIgcng9IjMxMCIgcnk9IjUwIiBmaWxsPSIjMzlmZjE0IiBvcGFjaXR5PSIuMSIgZmlsdGVyPSJ1cmwoI2dsb3cpIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjYwIDE4NSkgcm90YXRlKC04IDM0MCAxNjApIj48cGF0aCBkPSJNMTYwIDk1QzE3NSAzNyAyMjUgMTIgMjkyIDEySDM4OEM0NTUgMTIgNTA1IDM3IDUyMCA5NUw1NzYgMjYwQzU5MiAzMDggNTU4IDM0MCA1MTggMzIzTDQyNSAyODJIMjU1TDE2MiAzMjNDMTIyIDM0MCA4OCAzMDggMTA0IDI2MFoiIGZpbGw9IiMxZDI4MWIiIHN0cm9rZT0idXJsKCNuZW9uKSIgc3Ryb2tlLXdpZHRoPSI1Ii8+PHBhdGggZD0iTTE5OCAxMzBIMjY3TTIzMiA5NVYxNjUiIHN0cm9rZT0iI2E1ZmY0ZCIgc3Ryb2tlLXdpZHRoPSIxOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSBjeD0iNDQwIiBjeT0iMTE1IiByPSIxNyIgZmlsbD0iI2E1ZmY0ZCIvPjxjaXJjbGUgY3g9IjQ4NSIgY3k9IjE1NSIgcj0iMTciIGZpbGw9IiNhNWZmNGQiLz48Y2lyY2xlIGN4PSI0MTAiIGN5PSIxNjUiIHI9IjEwIiBmaWxsPSIjZThmZmQ3Ii8+PGNpcmNsZSBjeD0iNDY1IiBjeT0iOTUiIHI9IjEwIiBmaWxsPSIjZThmZmQ3Ii8+PHBhdGggZD0iTTMxMyAxMDZMMzM3IDE0NUwzNjAgMTA2TTMzNyAxNDVWMTgwIiBzdHJva2U9IiM5YmFmOTIiIHN0cm9rZS13aWR0aD0iNSIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHJlY3QgeD0iMjkyIiB5PSIyMDciIHdpZHRoPSI5NCIgaGVpZ2h0PSI0NSIgcng9IjEyIiBmaWxsPSIjMGIxMDBiIiBzdHJva2U9IiM1NTcyNGIiIHN0cm9rZS13aWR0aD0iMyIvPjwvZz48dGV4dCB4PSI2MDAiIHk9IjEwNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2E1ZmY0ZCIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIyMCIgbGV0dGVyLXNwYWNpbmc9IjYiPlBMQVlFUiAxIC8vIERJU1RSQUNURUQ8L3RleHQ+PHRleHQgeD0iNjAwIiB5PSI1ODAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmM2Y3ZjAiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iNDciIGZvbnQtd2VpZ2h0PSI3MDAiPlNJREUgUVVFU1Q6IEFDVElWRTwvdGV4dD48dGV4dCB4PSI2MDAiIHk9IjYyNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzllYWM5OCIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIyMCI+T05FIE1PUkUgTUFUQ0guIEFHQUlOLjwvdGV4dD48L3N2Zz4=" alt="Gaming setup with monitors and colorful lighting" loading="lazy" decoding="async">
+          </figure>
+          <section class="blog-content">
+            <small class="blog-number">POST_002 / GAMING</small>
+            <h3>Gaming Is My Full-Time Side Quest</h3>
+            <p>Main quest: learn programming. Side quest: one more match that somehow takes three hours.</p>
           </section>
-        </header>
-        <section class="contact-card" aria-label="Send a message">
-          <form class="contact-form" id="contact-form">
-            <section class="form-row">
-              <section>
-                <label for="name">Your name</label>
-                <input id="name" name="name" type="text" autocomplete="name" placeholder="e.g. Sam Smith" required>
-              </section>
-              <section>
-                <label for="email">Email address</label>
-                <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
-              </section>
-            </section>
-            <section>
-              <label for="subject">Subject</label>
-              <input id="subject" name="subject" type="text" placeholder="What is it about?" required>
-            </section>
-            <section>
-              <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Tell me a little about your idea..." required></textarea>
-            </section>
-            <button class="button button-primary" type="submit">Send message ↗</button>
-            <p class="form-note">Demo form: connect a form service or server endpoint to receive messages.</p>
-            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-          </form>
-        </section>
+        </article>
+        <article class="blog-card">
+          <figure>
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjcwMCIgdmlld0JveD0iMCAwIDEyMDAgNzAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiMxMzFiMTIiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwNzA5MDciLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JlZW4iIHgyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjYzRmZjgwIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMzlmZjE0Ii8+PC9saW5lYXJHcmFkaWVudD48ZmlsdGVyIGlkPSJnbG93Ij48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSI4IiByZXN1bHQ9ImIiLz48ZmVNZXJnZT48ZmVNZXJnZU5vZGUgaW49ImIiLz48ZmVNZXJnZU5vZGUgaW49IlNvdXJjZUdyYXBoaWMiLz48L2ZlTWVyZ2U+PC9maWx0ZXI+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjcwMCIgZmlsbD0idXJsKCNiZykiLz48ZyBzdHJva2U9IiNhNWZmNGQiIHN0cm9rZS1vcGFjaXR5PSIuMTMiIGZpbGw9Im5vbmUiPjxwYXRoIGQ9Ik0wIDkwSDEyMDBNMCA2MTBIMTIwME0xMjAgMFY3MDBNMTA4MCAwVjcwMCIvPjxwYXRoIGQ9Ik0wIDM1MEgxMjAwIiBzdHJva2UtZGFzaGFycmF5PSI4IDE0Ii8+PC9nPjxyZWN0IHg9IjEzMCIgeT0iMTAwIiB3aWR0aD0iOTQwIiBoZWlnaHQ9IjUwMCIgcng9IjI0IiBmaWxsPSIjMDkwZDA5IiBzdHJva2U9IiM1MjZjNGEiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik0xMzAgMTUwSDEwNzAiIHN0cm9rZT0iIzUyNmM0YSIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgZmlsbD0iIzUyNmM0YSI+PGNpcmNsZSBjeD0iMTYyIiBjeT0iMTI2IiByPSI2Ii8+PGNpcmNsZSBjeD0iMTg0IiBjeT0iMTI2IiByPSI2Ii8+PGNpcmNsZSBjeD0iMjA2IiBjeT0iMTI2IiByPSI2Ii8+PC9nPjx0ZXh0IHg9IjI0NSIgeT0iMTMzIiBmaWxsPSIjOTNhNjhhIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjE3Ij5kZWJ1Z2dpbmdfc2Vzc2lvbi5sb2c8L3RleHQ+PGcgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIyMiI+PHRleHQgeD0iMTgwIiB5PSIyMTIiIGZpbGw9IiM3MTgzNmIiPjAxPC90ZXh0Pjx0ZXh0IHg9IjIzMCIgeT0iMjEyIiBmaWxsPSIjYTVmZjRkIj5jb25zdDwvdGV4dD48dGV4dCB4PSIzMDUiIHk9IjIxMiIgZmlsbD0iI2YzZjdmMCI+Y29uZmlkZW5jZSA9IHRydWU7PC90ZXh0Pjx0ZXh0IHg9IjE4MCIgeT0iMjY1IiBmaWxsPSIjNzE4MzZiIj4wMjwvdGV4dD48dGV4dCB4PSIyMzAiIHk9IjI2NSIgZmlsbD0iIzcxODM2YiI+Ly8gcHJvYmFibHkgdHJ1ZTwvdGV4dD48dGV4dCB4PSIxODAiIHk9IjMxOCIgZmlsbD0iIzcxODM2YiI+MDM8L3RleHQ+PHRleHQgeD0iMjMwIiB5PSIzMTgiIGZpbGw9IiNmZjgxN2UiPkVycm9yOiBjb25maWRlbmNlIG5vdCBmb3VuZDwvdGV4dD48dGV4dCB4PSIxODAiIHk9IjM3MSIgZmlsbD0iIzcxODM2YiI+MDQ8L3RleHQ+PHRleHQgeD0iMjMwIiB5PSIzNzEiIGZpbGw9IiNhNWZmNGQiPnRyeSB7PC90ZXh0Pjx0ZXh0IHg9IjI2NSIgeT0iNDI0IiBmaWxsPSIjZjNmN2YwIj4gIHByZXNzKCdDVFJMJywgJ1onKTs8L3RleHQ+PHRleHQgeD0iMjMwIiB5PSI0NzciIGZpbGw9IiNhNWZmNGQiPn0gY2F0Y2ggKGV2ZXJ5dGhpbmcpIHs8L3RleHQ+PHRleHQgeD0iMjY1IiB5PSI1MzAiIGZpbGw9IiNmZjgxN2UiPiAgYmxhbWUgdGhlIGNvbXBpbGVyOzwvdGV4dD48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNzc1IDM0MCkiIGZpbHRlcj0idXJsKCNnbG93KSI+PHJlY3Qgd2lkdGg9IjIxMCIgaGVpZ2h0PSIxMTAiIHJ4PSIxMyIgZmlsbD0iIzE3MWYxNSIgc3Ryb2tlPSJ1cmwoI2dyZWVuKSIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMTA1IiB5PSI0NCIgZmlsbD0iI2YzZjdmMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIyMCI+Q1RSTDwvdGV4dD48dGV4dCB4PSIxMDUiIHk9Ijg0IiBmaWxsPSIjYTVmZjRkIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjMyIiBmb250LXdlaWdodD0iNzAwIj4rIFo8L3RleHQ+PC9nPjx0ZXh0IHg9IjYwMCIgeT0iNjUzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNzg5MzZmIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjE1IiBsZXR0ZXItc3BhY2luZz0iNSI+VU5ETyBJUyBBIExJRkVTVFlMRTwvdGV4dD48L3N2Zz4=" alt="Code on a computer screen in a dark workspace" loading="lazy" decoding="async">
+          </figure>
+          <section class="blog-content">
+            <small class="blog-number">POST_003 / DEBUGGING</small>
+            <h3>Ctrl+Z Is My Best Friend</h3>
+            <p>Breaking things, making mistakes, and hoping Ctrl+Z can fix everything.</p>
+          </section>
+        </article>
+      </section>
+    </section>
+
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <header class="section-heading">
+        <p class="eyebrow">04 / Contact</p>
+        <h2 id="contact-title">Have an idea? <em class="accent">Let's talk.</em></h2>
+        <p>Questions, recommendations, gaming talk, or a reason to stop queueing for a match? Send me a message.</p>
+      </header>
+      <section class="contact-grid" aria-label="Contact information and message form">
+        <article class="contact-copy">
+          <h3>Find me somewhere on the internet.</h3>
+          <p>I'm probably at my PC. Email is the most reliable way to reach me.</p>
+          <address class="contact-details">
+            <p class="contact-detail"><small>Email</small><strong><a href="mailto:fdhwkng@protonmail.com">fdhwkng@protonmail.com</a></strong></p>
+            <p class="contact-detail"><small>Location</small><strong>Probably at my PC</strong></p>
+            <p class="contact-detail"><small>Response time</small><strong>Faster than my coding skills.</strong></p>
+          </address>
+        </article>
+        <form class="contact-form" id="contact-form">
+          <section class="field-row">
+            <p class="field">
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="Player 2" required>
+            </p>
+            <p class="field">
+              <label for="email">Your email</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+            </p>
+          </section>
+          <p class="field">
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" type="text" placeholder="A very important side quest" required>
+          </p>
+          <p class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+          </p>
+          <button class="button button-primary" type="submit">Prepare email ↗</button>
+          <p class="form-note">This form opens your email app with a prepared draft. It does not send anything automatically.</p>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
       </section>
     </section>
   </main>
 
   <footer class="site-footer">
-    <section class="footer-inner">
-      <p>© <time datetime="2026">2026</time> Alex Morgan. Built with care.</p>
-      <p><a href="#home">Back to top ↑</a></p>
+    <section class="footer-inner" aria-label="Footer and social links">
+      <section class="footer-copy">
+        <a class="brand" href="#home"><strong>FUAD</strong><em>//</em>PORTFOLIO</a>
+        <p>Built with curiosity, neon green, and questionable decisions.</p>
+      </section>
+      <nav aria-label="Social profiles">
+        <ul class="social-links">
+          <li><a href="https://github.com/fdhwkng" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+          <li><a href="https://www.instagram.com/fu4dex" target="_blank" rel="noopener noreferrer">Instagram ↗</a></li>
+          <li><a href="https://steamcommunity.com/search/users/#text=fdhwkng" target="_blank" rel="noopener noreferrer">Steam ↗</a></li>
+          <li><a href="https://discord.com/app" target="_blank" rel="noopener noreferrer" aria-label="Open Discord app">Discord ↗</a></li>
+          <li><button type="button" id="copy-discord" aria-label="Copy Discord username fuaddidaqaqulya">Copy Discord name</button></li>
+        </ul>
+      </nav>
     </section>
+    <p class="copyright">© <time id="year" datetime="2026">2026</time> Mustafayev Fuad. All rights reserved. No code was harmed intentionally.</p>
   </footer>
 
   <script>
     const contactForm = document.querySelector('#contact-form');
     const formStatus = document.querySelector('#form-status');
+    const emailAddress = 'fdhwkng@protonmail.com';
 
     contactForm.addEventListener('submit', (event) => {
       event.preventDefault();
       if (!contactForm.reportValidity()) return;
-      formStatus.textContent = 'Thanks! The form works as a front-end demo, but no message has been sent. Connect a form service to receive submissions.';
-      contactForm.reset();
+
+      const formData = new FormData(contactForm);
+      const name = String(formData.get('name') || '').trim();
+      const senderEmail = String(formData.get('email') || '').trim();
+      const subject = String(formData.get('subject') || '').trim();
+      const message = String(formData.get('message') || '').trim();
+      const body = `From: ${name}\nReply to: ${senderEmail}\n\n${message}`;
+      const mailto = `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      formStatus.textContent = 'Opening your email app. If nothing happens, email me directly at ' + emailAddress + '.';
+      window.location.href = mailto;
     });
+
+    document.querySelector('#copy-discord').addEventListener('click', async () => {
+      const username = 'fuaddidaqaqulya';
+      const status = document.querySelector('#form-status');
+      try {
+        await navigator.clipboard.writeText(username);
+        status.textContent = `Discord username copied: ${username}`;
+      } catch (error) {
+        status.textContent = `Discord username: ${username} (copy it manually)`;
+      }
+    });
+
+    document.querySelector('#year').textContent = new Date().getFullYear();
+    document.querySelector('#year').setAttribute('datetime', String(new Date().getFullYear()));
   </script>
 </body>
 </html>
