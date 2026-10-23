@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Fuad</title>
+    <style>
+        /* CSS Dizaynı */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* Naviqasiya paneli[cite: 1, 2] */
+        header {
+            background-color: #222;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        nav a:hover {
+            color: #f0a500;
+        }
+
+        /* Home Page - Mərkəzləşdirilmiş arxa plan[cite: 2] */
+        #home {
+            /* Şəklinizin URL-ni və ya fayl adını bura daxil edin */
+            background-image: url('https://via.placeholder.com/1200x800?text=Menim+Seklim');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        /* About Page - Arxa plan, CV və Cədvəl[cite: 2] */
+        #about {
+            background-color: #2c3e50;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        table {
+            margin: 30px auto;
+            border-collapse: collapse;
+            width: 70%;
+            background-color: #34495e;
+            color: white;
+        }
+        th, td {
+            border: 1px solid #bdc3c7;
+            padding: 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #1abc9c;
+            text-align: center;
+        }
+
+        /* Contact Page - Form dizaynı[cite: 1, 2] */
+        #contact {
+            padding: 60px 20px;
+            background-color: #ecf0f1;
+            text-align: center;
+        }
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            display: inline-block;
+            text-align: left;
+            width: 100%;
+            max-width: 400px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #222;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #f0a500;
+        }
+
+        /* Blog Page - Şəkil və yazılar[cite: 1] */
+        #blog {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .blog-post {
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            text-align: left;
+        }
+        .blog-post img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Naviqasiya Paneli[cite: 1, 2] -->
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#blog">Blog</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Ana Səhifə (Home)[cite: 1, 2] -->
+        <section id="home">
+            <h1>Xoş Gəlmisiniz!</h1>
+            <p>Mən Fuad, bura mənim rəqəmsal portfoliomdur.</p>
+        </section>
+
+        <!-- Haqqımda (About)[cite: 1, 2] -->
+        <section id="about">
+            <article>
+                <h2>Haqqımda (CV)</h2>
+                <p><strong>Ad:</strong> Fuad</p>
+                <p><strong>ID:</strong> 001</p>
+                <p><strong>Doğum Tarixi:</strong> 2007</p>
+                <p><strong>Məqsəd:</strong> JET Academy-də Full Stack proqramlaşdırma təhsilimi uğurla başa vurub rəqəmsal dünyada yaradıcılığımı inkişaf etdirmək və boom bap rep sahəsində olan layihələrimi davam etdirmək.</p
